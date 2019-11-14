@@ -2,11 +2,15 @@
 	import Keypad from './Keypad.svelte';
 
 	let pin;
+	let auth = false;
 	$: view = pin ? pin.replace(/\d(?!$)/g, '*') : 'enter your pin';
 
 	function handleSubmit() {
-		if(pin === 666){
-			console.log('welcome');
+		// console.log(pin);
+		if(pin = 666)
+		{
+			auth = true;
+			console.log('Correct');
 		}
 
 	}
