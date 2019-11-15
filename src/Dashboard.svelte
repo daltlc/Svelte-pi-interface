@@ -3,22 +3,22 @@
     {
       name: "Netflix",
       image: "",
-      link: ""
+      link: "https://www.netflix.com"
     },
     {
       name: "Hulu",
       image: "",
-      link: ""
+      link: "https://www.hulu.com"
     },
     {
       name: "Disney+",
       image: "",
-      link: ""
+      link: "https://www.disneyplus.com"
     },
     {
       name: "ESPN+",
       image: "",
-      link: ""
+      link: "https://plus.espn.com"
     }
   ];
 </script>
@@ -40,8 +40,8 @@
 
 <div class="dashboard__main">
   <ul>
-    {#each apps as { name, image }, i}
-      <li>{name}</li>
+    {#each apps as { name, image,link }, i}
+      <li> <a href="{link}">{name}</a></li>
     {/each}
   </ul>
 
