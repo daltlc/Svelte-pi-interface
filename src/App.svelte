@@ -1,66 +1,71 @@
 <script>
-	import Keypad from './Keypad.svelte';
-	import Dashboard from './Dashboard.svelte'
-	import { onMount } from 'svelte';
-	import { writable } from 'svelte/store';
+  import Keypad from "./Keypad.svelte";
+  import Dashboard from "./Dashboard.svelte";
+  import { onMount } from "svelte";
+  import { writable } from "svelte/store";
 
+  let pin;
+  let user = { loggedIn: false };
+  let currentUser;
+  let currentTheme;
+  let invalid = false;
+  $: view = pin ? pin.replace(/\d(?!$)/g, "*") : "Enter your pin";
+  let users = [
+    {
+      username: "Dalton",
+      pin: "5555",
+      icon: "",
+      color: "#30D39D"
+    },
+    {
+      username: "Carissa",
+      pin: "0143",
+      icon: "",
+      color: "blue"
+    }
+  ];
 
-	let pin;
-	let user = {loggedIn: false};
-	let currentUser;
-	let currentTheme;
-	$: view = pin ? pin.replace(/\d(?!$)/g, '*') : 'enter your pin';
-	let users = [
-		{
-			username: 'Dalton',
-			pin: '5555',
-			icon: '',
-			color:'red'
-		}
-	]
+  onMount(() => {
+    let savedUser = localStorage.getItem("user");
+    let savedTheme = localStorage.getItem("theme");
+    let savedPin = localStorage.getItem("pin");
+    if (savedUser && savedTheme && savedPin) {
+      user.loggedIn = true;
+      currentUser = savedUser;
+      currentTheme = savedTheme;
+    }
+  });
 
-	onMount(() => {
-		let savedUser = localStorage.getItem('user');
-		let savedTheme = localStorage.getItem('theme')
-		let savedPin = localStorage.getItem('pin')
-		if(savedUser && savedTheme && savedPin){
-			user.loggedIn = true;
-			currentUser = savedUser
-			currentTheme = savedTheme
-		}
-	});
-
-
-	const pinSubmit = () => {
-		for(let i = 0;i < users.length; i++){
-			if(users[i].pin === pin){
-				user.loggedIn = true;
-				currentUser = users[i].username;
-				currentTheme = users[i].color;
-				localStorage.setItem('user', users[i].username)
-				localStorage.setItem('theme', users[i].color);
-				localStorage.setItem('pin', users[i].pin);
-
-			}else{
-				alert('Incorrect pin, please try again.');
-			}
-		}
-	}
+  const pinSubmit = () => {
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].pin === pin) {
+        user.loggedIn = true;
+        currentUser = users[i].username;
+        currentTheme = users[i].color;
+        localStorage.setItem("user", users[i].username);
+        localStorage.setItem("theme", users[i].color);
+        localStorage.setItem("pin", users[i].pin);
+      } else {
+      }
+    }
+  };
 </script>
+
 <style>
-h1{
-	color:white;
-}
+  h1 {
+    color: white;
+    text-align: center;
+  }
 </style>
 
 {#if !user.loggedIn}
-<h1 style="color: {pin ? '#333' : '#ccc'}">{view}</h1>
-	<Keypad bind:value={pin} on:submit={pinSubmit}/>
+  <h1 style="color:black">Welcome to D$EntertainmentSystemDelux-3000</h1>
+  <h1 style="color: {pin ? '#333' : '#ccc'}">{view}</h1>
+  <Keypad bind:value={pin} on:submit={pinSubmit} />
 {/if}
 {#if user.loggedIn}
-<div class = "dashboard" style="background-color: {currentTheme}">
-	<h1>Welcome {currentUser} </h1>
-	<Dashboard/>
-</div>
-
+  <div class="dashboard" style="background-color: {currentTheme}">
+    <h1>Welcome {currentUser}</h1>
+    <Dashboard />
+  </div>
 {/if}
