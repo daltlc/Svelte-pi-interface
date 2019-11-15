@@ -1,6 +1,9 @@
 <script>
 	import Keypad from './Keypad.svelte';
 	import Dashboard from './Dashboard.svelte'
+	import { onMount } from 'svelte';
+	import { writable } from 'svelte/store';
+
 
 	let pin;
 	let user = {loggedIn: false};
@@ -15,12 +18,29 @@
 			color:'red'
 		}
 	]
+
+	onMount(() => {
+		let savedUser = localStorage.getItem('user');
+		let savedTheme = localStorage.getItem('theme')
+		let savedPin = localStorage.getItem('pin')
+		if(savedUser && savedTheme && savedPin){
+			user.loggedIn = true;
+			currentUser = savedUser
+			currentTheme = savedTheme
+		}
+	});
+
+
 	const pinSubmit = () => {
 		for(let i = 0;i < users.length; i++){
 			if(users[i].pin === pin){
 				user.loggedIn = true;
 				currentUser = users[i].username;
 				currentTheme = users[i].color;
+				localStorage.setItem('user', users[i].username)
+				localStorage.setItem('theme', users[i].color);
+				localStorage.setItem('pin', users[i].pin);
+
 			}else{
 				alert('Incorrect pin, please try again.');
 			}
