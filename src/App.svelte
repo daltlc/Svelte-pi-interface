@@ -64,6 +64,8 @@
   font-weight:500;
   font-size:40px;
   padding-bottom:10px;
+  background-color:rgb(24, 24, 24);
+
 }
   h1 {
     color: white;

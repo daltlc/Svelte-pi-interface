@@ -1,5 +1,6 @@
 <script>
   import News from "./News.svelte";
+  import Weather from "./Weather.svelte";
   // let apps = [
   //   {
   //     name: "Netflix",
@@ -27,6 +28,8 @@
 <style>
   .dashboard__main {
     min-height: 90vh;
+    display: flex;
+    flex-direction: row;
   }
   ul {
     display: flex;
@@ -50,4 +53,5 @@
     {/each}
   </ul> -->
   <News/>
+  <Weather/>
 </div>
