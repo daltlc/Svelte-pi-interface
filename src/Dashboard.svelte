@@ -1,26 +1,27 @@
 <script>
-  let apps = [
-    {
-      name: "Netflix",
-      image: "",
-      link: "https://www.netflix.com"
-    },
-    {
-      name: "Hulu",
-      image: "",
-      link: "https://www.hulu.com"
-    },
-    {
-      name: "Disney+",
-      image: "",
-      link: "https://www.disneyplus.com"
-    },
-    {
-      name: "ESPN+",
-      image: "",
-      link: "https://plus.espn.com"
-    }
-  ];
+  import News from "./News.svelte";
+  // let apps = [
+  //   {
+  //     name: "Netflix",
+  //     image: "",
+  //     link: "https://www.netflix.com"
+  //   },
+  //   {
+  //     name: "Hulu",
+  //     image: "",
+  //     link: "https://www.hulu.com"
+  //   },
+  //   {
+  //     name: "Disney+",
+  //     image: "",
+  //     link: "https://www.disneyplus.com"
+  //   },
+  //   {
+  //     name: "ESPN+",
+  //     image: "",
+  //     link: "https://plus.espn.com"
+  //   }
+  // ];
 </script>
 
 <style>
@@ -31,18 +32,21 @@
     justify-content: space-between;
   }
   li {
-    padding: 20px 40px;
+    padding: 20px 20px;
     list-style-type: none;
-    color: white;
     cursor: pointer;
+    text-align: center;
+  }
+  a{
+      color: white;
   }
 </style>
 
 <div class="dashboard__main">
-  <ul>
+  <!-- <ul>
     {#each apps as { name, image,link }, i}
       <li> <a href="{link}">{name}</a></li>
     {/each}
-  </ul>
-
+  </ul> -->
+  <News/>
 </div>

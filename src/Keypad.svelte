@@ -12,8 +12,7 @@
 
 <style>
   .keypad-container {
-    display: flex;
-    justify-content: center;
+    margin-left: 40px;
   }
   .keypad {
     display: grid;

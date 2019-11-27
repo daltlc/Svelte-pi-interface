@@ -11,6 +11,8 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "request-promise": "^4.2.5",
     "sirv-cli": "^0.4.4"
   },
   "scripts": {
