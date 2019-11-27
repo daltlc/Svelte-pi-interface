@@ -27,7 +27,7 @@
 //         err = err;
 //       });
 //   }; 
-    $: fetch(`ttps://hacker-news.firebaseio.com/v0/topstories.json`)
+    $: fetch(`https://hacker-news.firebaseio.com/v0/topstories.json`)
     .then(r => r.json())
 		.then(data => {
             items = data;
