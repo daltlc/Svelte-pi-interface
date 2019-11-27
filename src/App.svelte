@@ -56,7 +56,6 @@
 
 .main-app{
   background-color: #232F34;
-  min-height: 100vh;
 }
 .welcome{
   color:white;

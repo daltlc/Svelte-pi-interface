@@ -26,6 +26,7 @@
 
 <style>
   .dashboard__main {
+    min-height: 90vh;
   }
   ul {
     display: flex;
