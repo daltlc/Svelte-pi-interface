@@ -50,9 +50,11 @@
   .news-container {
     overflow-y: scroll;
     height: 80vh;
-    background-color: rgb(24, 24, 24);
+    background-color: #2d3e9b;
+    border-radius: 25px;
+
     padding: 10px 20px;
-    width:500px;
+    width: 500px;
   }
 </style>
 

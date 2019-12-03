@@ -13,10 +13,10 @@
 
   let users = [
     {
-      username: "Dalton",
+      username: "",
       pin: "5555",
       icon: "",
-      color: "#F9AA33"
+      color: "#191E4E"
     },
     {
       username: "Carissa",
@@ -56,6 +56,7 @@
 
 .main-app{
   background-color: #232F34;
+  min-height: 90vh;
 }
 .welcome{
   color:white;
@@ -64,7 +65,7 @@
   font-weight:500;
   font-size:40px;
   padding-bottom:10px;
-  background-color:rgb(24, 24, 24);
+  background-color:#06081B;
 
 }
   h1 {
