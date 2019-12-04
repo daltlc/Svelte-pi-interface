@@ -1,4 +1,6 @@
-*Psst  looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+This application was made for my personal rasberry pi as a central dashboard with some of different things I check out each morning, including news, crypto currency prices, and the weather.
+
+This was a project to familiarize myself with Svelte. 
 
 ---
 
