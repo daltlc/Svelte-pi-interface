@@ -2,5 +2,4 @@
 node_modules
 public/bundle.*
 .env
-apikeys.js
-users.js
+data
