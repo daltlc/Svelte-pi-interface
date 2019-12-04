@@ -67,7 +67,7 @@
     </div>
     <div class="third">
       <Entertainment />
-      <Crypto />
+      <Next />
       <Next />
     </div>
   {/if}
