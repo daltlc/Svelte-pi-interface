@@ -50,47 +50,67 @@
       }
     }
   };
+  let logOut = () => {
+     localStorage.clear();
+     location.reload();
+  }
 </script>
 
 <style>
-
-.main-app{
-  background-color: #232F34;
-  min-height: 90vh;
-}
-.welcome{
-  color:white;
-  padding-top:10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight:500;
-  font-size:40px;
-  padding-bottom:10px;
-  background-color:#06081B;
-  font-family: 'Montserrat', sans-serif;
-
-}
+  .main-app {
+    background-color: #232f34;
+    min-height: 90vh;
+  }
+  .welcome {
+    color: white;
+    padding-top: 10px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    padding-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+  }
   h1 {
     color: white;
-    padding-left:40px;
-    margin-bottom:20px;
-    margin-top:0px;
-    font-family: 'Montserrat', sans-serif;
-
+    padding-left: 40px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    font-family: "Montserrat", sans-serif;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #06081b;
+  }
+  .log-out {
+    margin-right: 40px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    background-color: #06081b;
+    border:none;
+    cursor:pointer;
   }
 </style>
+
 <div class="main-app">
-{#if !user.loggedIn}
-  <h1 class="welcome">Welcome to <span style="color:#F9AA33;">Scope</span></h1>
-  <h1 style="color: {pin ? '#F9AA33' : '#ccc'}">{view}</h1>
-  <Keypad bind:value={pin} on:submit={pinSubmit} />
-{/if}
-{#if user.loggedIn}
-  <div class="dashboard" style="background-color: {currentTheme}">
-    <h1 class="welcome">Welcome {currentUser}</h1>
-    <!-- This will be the setting gear component -->
-    <!-- <Settings/> -->
-    <!--pass user with dashboard as prop to render correct apps-->
-    <Dashboard user={currentUser}/>
-  </div>
-{/if}
+  {#if !user.loggedIn}
+    <h1 class="welcome">
+      Welcome to
+      <span style="color:#F9AA33;">Scope</span>
+    </h1>
+    <h1 style="color: {pin ? '#F9AA33' : '#ccc'}">{view}</h1>
+    <Keypad bind:value={pin} on:submit={pinSubmit} />
+  {/if}
+  {#if user.loggedIn}
+    <div class="dashboard" style="background-color: {currentTheme}">
+      <div class="nav">
+        <h1 class="welcome">Welcome {currentUser}</h1>
+        <button on:click|once={logOut} class="log-out">Log out</button>
+      </div>
+      <!-- This will be the setting gear component -->
+      <!-- <Settings/> -->
+      <!--pass user with dashboard as prop to render correct apps-->
+      <Dashboard user={currentUser} />
+    </div>
+  {/if}
 </div>
