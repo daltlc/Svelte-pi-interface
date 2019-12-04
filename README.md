@@ -1,5 +1,7 @@
 This application was made for my personal rasberry pi as a central dashboard with some of different things I check out each morning, including news, crypto currency prices, and the weather.
 
+This was built for a fixed screen size, responsiveness wasn't needed.
+
 This was a project to familiarize myself with Svelte. 
 
 If you wish to fork this and use for yourself, keep in mind you will need to create your own data folder within src with users.js and apikeys.js. The structure for users will be below, you will need to get your own api key for the crypto and weather component yourself. https://api.openweathermap.org, https://api.cryptonator.com.
