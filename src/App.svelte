@@ -1,6 +1,6 @@
 <script>
-  import Keypad from "./Keypad.svelte";
-  import Dashboard from "./Dashboard.svelte";
+  import Keypad from "./components/Keypad.svelte";
+  import Dashboard from "./components/Dashboard.svelte";
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
   import Users from "./data/users.js";
@@ -43,7 +43,7 @@
   };
 </script>
 
-<style>
+<style type="text/scss">
   .main-app {
     background-color: #232f34;
     min-height: 90vh;
@@ -76,11 +76,12 @@
     background-color: #06081b;
     border: none;
     cursor: pointer;
-  }
-  .log-out:hover {
+    &:hover {
     color: #7186fd;
     transition: all 0.3s ease-in-out;
   }
+  }
+  
 </style>
 
 <div class="main-app">
@@ -98,9 +99,6 @@
         <h1 class="welcome">Welcome {currentUser}</h1>
         <button on:click|once={logOut} class="log-out">Log out</button>
       </div>
-      <!-- This will be the setting gear component -->
-      <!-- <Settings/> -->
-      <!--pass user with dashboard as prop to render correct apps-->
       <Dashboard user={currentUser} />
     </div>
   {/if}

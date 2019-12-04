@@ -5,6 +5,9 @@ import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import rollup_start_dev from './rollup_start_dev';
+import sass from 'rollup-plugin-sass';
+import autoPreprocess from 'svelte-preprocess';
+
 
 
 
@@ -19,7 +22,11 @@ export default {
 		file: 'public/bundle.js'
 	},
 	plugins: [
+		sass(),
 		svelte({
+
+			preprocess: autoPreprocess(),
+
 			// enable run-time checks when not in production
 			dev: !production,
 			// we'll extract any component CSS out into

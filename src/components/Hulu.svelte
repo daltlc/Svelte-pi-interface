@@ -1,4 +1,10 @@
-<style>
+<script>
+  let gotoHulu = () => {
+    window.open("https://hulu.com");
+  };
+</script>
+
+<style type="text/scss">
   main {
     position: relative;
     max-width: 800px;
@@ -14,26 +20,20 @@
   main :global(a) {
     color: rgb(255, 255, 255);
   }
-  .next {
+  .hulu_main {
     height: 200px;
     /* background-color: #2d3e9b; */
     border-radius: 25px;
-    background-image: url("./images/netflix.png");
+    background-image: url("./images/hulu.jpg");
     background-position-y: -20px;
     background-size: cover;
-  }
-  .next:hover {
-    opacity: 0.7;
-    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
   }
 </style>
 
 <main>
-  <div on:click|once={gotoNetflix} class="next"></div>
+  <div on:click|once={gotoHulu} class="hulu_main" />
 </main>
-
-<script>
-let gotoNetflix = () => {
-  window.open("https://netflix.com");
-}
-</script>

@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-
   let bitcoinObj;
   let bitcoinPrice;
   let ethObj;
@@ -14,16 +13,10 @@
       `https://api.cryptonator.com/api/ticker/eth-usd`
     ).then(r => r.json());
     ethPrice = ethObj.ticker.price;
-
-    console.log(ethObj);
-    // this.r = result.data.ticker.price;
-    // let price = result.data.ticker.price
-    // console.log(price)
-    // this.prices.push(price);
   });
 </script>
 
-<style>
+<style type="text/scss">
   main {
     position: relative;
     max-width: 800px;
@@ -48,19 +41,19 @@
     color: white;
     display: flex;
     justify-content: space-between;
-  }
-  h1 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 21.4px;
-  }
-  h2 {
-    font-size: 14px;
-    font-family: "Montserrat", sans-serif;
-  }
-  img{
-    height:100px;
-    max-height:auto;
-    align-self: center;
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 21.4px;
+    }
+    h2 {
+      font-size: 14px;
+      font-family: "Montserrat", sans-serif;
+    }
+    img {
+      height: 100px;
+      max-height: auto;
+      align-self: center;
+    }
   }
 </style>
 
@@ -76,4 +69,3 @@
 
   </div>
 </main>
- 

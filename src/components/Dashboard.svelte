@@ -15,24 +15,25 @@
   }, 200);
 </script>
 
-<style>
+<style type="text/scss">
   .dashboard__main {
     min-height: 90vh;
     display: flex;
     flex-direction: row;
-  }
-  ul {
-    display: flex;
-    justify-content: space-between;
-  }
-  li {
-    padding: 20px 20px;
-    list-style-type: none;
-    cursor: pointer;
-    text-align: center;
-  }
-  a {
-    color: white;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+    }
+    li {
+      padding: 20px 20px;
+      list-style-type: none;
+      cursor: pointer;
+      text-align: center;
+    }
+    a {
+      color: white;
+    }
   }
 </style>
 
@@ -42,7 +43,7 @@
     <div class="second">
       <Weather />
       <Netflix />
-      
+
     </div>
     <div class="third">
       <!-- <Entertainment /> -->
