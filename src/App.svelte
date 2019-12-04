@@ -3,7 +3,7 @@
   import Dashboard from "./Dashboard.svelte";
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
-  import Users from "./data/users.js"
+  import Users from "./data/users.js";
 
   let pin;
   let user = { loggedIn: false };
@@ -13,7 +13,7 @@
   $: view = pin ? pin.replace(/\d(?!$)/g, "*") : "Enter your pin";
 
   onMount(() => {
-    console.log(Users)
+    console.log(Users);
     let savedUser = localStorage.getItem("user");
     let savedTheme = localStorage.getItem("theme");
     let savedPin = localStorage.getItem("pin");
@@ -38,9 +38,9 @@
     }
   };
   let logOut = () => {
-     localStorage.clear();
-     location.reload();
-  }
+    localStorage.clear();
+    location.reload();
+  };
 </script>
 
 <style>
@@ -74,8 +74,12 @@
     color: white;
     font-family: "Montserrat", sans-serif;
     background-color: #06081b;
-    border:none;
-    cursor:pointer;
+    border: none;
+    cursor: pointer;
+  }
+  .log-out:hover {
+    color: #7186fd;
+    transition: all 0.3s ease-in-out;
   }
 </style>
 

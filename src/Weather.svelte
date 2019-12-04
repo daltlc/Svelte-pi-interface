@@ -11,7 +11,8 @@
   onMount(async () => {
     console.log(weatherKey);
     let apiCall = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?id=5809844&APPID=` + `${weatherKey.weatherKey}`
+      `https://api.openweathermap.org/data/2.5/weather?id=5809844&APPID=` +
+        `${weatherKey.weatherKey}`
     ).then(r => r.json());
     console.log(apiCall);
     name = apiCall.name;
@@ -46,14 +47,12 @@
     padding: 10px 20px;
     color: white;
   }
-  h1{
-    font-family: 'Montserrat', sans-serif;
-
+  h1 {
+    font-family: "Montserrat", sans-serif;
   }
   h2 {
     font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-
+    font-family: "Montserrat", sans-serif;
   }
 </style>
 

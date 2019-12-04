@@ -1,39 +1,18 @@
 <script>
   import News from "./News.svelte";
   import Weather from "./Weather.svelte";
-  import Next from "./Next.svelte";
+  import Netflix from "./Netflix.svelte";
   import Entertainment from "./Entertainment.svelte";
   import Crypto from "./Crypto.svelte";
-  import { fade } from 'svelte/transition';
+  import Hulu from "./Hulu.svelte";
 
+  import { fade } from "svelte/transition";
 
   let show = false;
   export let user;
-
-  // let apps = [
-  //   {
-  //     name: "Netflix",
-  //     image: "",
-  //     link: "https://www.netflix.com"
-  //   },
-  //   {
-  //     name: "Hulu",
-  //     image: "",
-  //     link: "https://www.hulu.com"
-  //   },
-  //   {
-  //     name: "Disney+",
-  //     image: "",
-  //     link: "https://www.disneyplus.com"
-  //   },
-  //   {
-  //     name: "ESPN+",
-  //     image: "",
-  //     link: "https://plus.espn.com"
-  //   }
-  // ];
- setTimeout(function(){ show = true }, 200);
-
+  setTimeout(function() {
+    show = true;
+  }, 200);
 </script>
 
 <style>
@@ -56,24 +35,20 @@
     color: white;
   }
 </style>
+
 {#if show}
-<div transition:fade class="dashboard__main">
+  <div transition:fade class="dashboard__main">
     <News />
     <div class="second">
       <Weather />
-      <Next />
-      <!-- <Next /> -->
+      <Netflix />
+      
     </div>
     <div class="third">
-      <Entertainment />
-      <!-- <Next /> -->
-      <!-- <Next /> -->
+      <!-- <Entertainment /> -->
+      <Crypto />
+      <Hulu />
     </div>
-  <!-- <ul>
-    {#each apps as { name, image,link }, i}
-      <li> <a href="{link}">{name}</a></li>
-    {/each}
-  </ul> -->
 
-</div>
+  </div>
 {/if}
