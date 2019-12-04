@@ -1,6 +1,15 @@
 <script>
   import News from "./News.svelte";
   import Weather from "./Weather.svelte";
+  import Next from "./Next.svelte";
+  import Entertainment from "./Entertainment.svelte";
+  import Crypto from "./Crypto.svelte";
+  import { fade } from 'svelte/transition';
+
+
+  let show = false;
+  export let user;
+
   // let apps = [
   //   {
   //     name: "Netflix",
@@ -23,6 +32,8 @@
   //     link: "https://plus.espn.com"
   //   }
   // ];
+ setTimeout(function(){ show = true }, 200);
+
 </script>
 
 <style>
@@ -41,17 +52,31 @@
     cursor: pointer;
     text-align: center;
   }
-  a{
-      color: white;
+  a {
+    color: white;
   }
 </style>
-
-<div class="dashboard__main">
+{#if show}
+<div transition:fade class="dashboard__main">
+  {#if user === 'Dalton'}
+    <News />
+    <div class="second">
+      <Weather />
+      <Next />
+      <Next />
+    </div>
+    <div class="third">
+      <Entertainment />
+      <Crypto />
+      <Next />
+    </div>
+  {/if}
+  {#if user === 'Carissa'}{/if}
   <!-- <ul>
     {#each apps as { name, image,link }, i}
       <li> <a href="{link}">{name}</a></li>
     {/each}
   </ul> -->
-  <News/>
-  <Weather/>
+
 </div>
+{/if}

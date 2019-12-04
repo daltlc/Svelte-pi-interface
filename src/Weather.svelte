@@ -44,8 +44,14 @@
     padding: 10px 20px;
     color: white;
   }
+  h1{
+    font-family: 'Montserrat', sans-serif;
+
+  }
   h2 {
     font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+
   }
 </style>
 

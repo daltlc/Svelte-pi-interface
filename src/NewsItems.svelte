@@ -17,6 +17,9 @@
 	h1 {
 		font-size: 1.4em;
 		margin: 0;
+		font-family: 'Montserrat', sans-serif!important;
+
+		
 	}
 </style>
 

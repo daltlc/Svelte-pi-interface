@@ -13,7 +13,7 @@
 
   let users = [
     {
-      username: "",
+      username: "Dalton",
       pin: "5555",
       icon: "",
       color: "#191E4E"
@@ -66,6 +66,7 @@
   font-size:40px;
   padding-bottom:10px;
   background-color:#06081B;
+  font-family: 'Montserrat', sans-serif;
 
 }
   h1 {
@@ -73,6 +74,8 @@
     padding-left:40px;
     margin-bottom:20px;
     margin-top:0px;
+    font-family: 'Montserrat', sans-serif;
+
   }
 </style>
 <div class="main-app">
@@ -86,7 +89,8 @@
     <h1 class="welcome">Welcome {currentUser}</h1>
     <!-- This will be the setting gear component -->
     <!-- <Settings/> -->
-    <Dashboard />
+    <!--pass user with dashboard as prop to render correct apps-->
+    <Dashboard user={currentUser}/>
   </div>
 {/if}
 </div>
