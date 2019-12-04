@@ -2,6 +2,10 @@ This application was made for my personal rasberry pi as a central dashboard wit
 
 This was a project to familiarize myself with Svelte. 
 
+This is hosted on netlify at: https://svelte-pi.netlify.com
+
+Input pin 5555 for my demo dashboard.
+
 ---
 
 # svelte app
