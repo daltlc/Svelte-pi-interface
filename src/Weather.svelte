@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import weatherKey from "../src/data/apikeys.js";
   let name;
   let city;
   let kelvin;
@@ -8,8 +9,9 @@
   let weatherConditions;
 
   onMount(async () => {
+    console.log(weatherKey);
     let apiCall = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?id=5809844&APPID=` + `${WEATHER_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?id=5809844&APPID=` + `${weatherKey.weatherKey}`
     ).then(r => r.json());
     console.log(apiCall);
     name = apiCall.name;
