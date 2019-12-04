@@ -1,37 +1,27 @@
 <script>
   import { onMount } from "svelte";
-  
-let bitcoinObj;
-let bitcoinPrice;
-let ethObj;
-let ethPrice;
+
+  let bitcoinObj;
+  let bitcoinPrice;
+  let ethObj;
+  let ethPrice;
   onMount(async () => {
     let bitcoinObj = await fetch(
       `https://api.cryptonator.com/api/ticker/btc-usd`
     ).then(r => r.json());
     bitcoinPrice = bitcoinObj.ticker.price;
     let ethObj = await fetch(
-        `https://api.cryptonator.com/api/ticker/eth-usd`
+      `https://api.cryptonator.com/api/ticker/eth-usd`
     ).then(r => r.json());
-        ethPrice = ethObj.ticker.price;
+    ethPrice = ethObj.ticker.price;
 
     console.log(ethObj);
-        // this.r = result.data.ticker.price;
-        // let price = result.data.ticker.price
-        // console.log(price)
-        // this.prices.push(price);
+    // this.r = result.data.ticker.price;
+    // let price = result.data.ticker.price
+    // console.log(price)
+    // this.prices.push(price);
   });
 </script>
-
-<main>
-<div class="crypto_main">
-     <h1>Bitoin Price</h1>
-    <h2>{bitcoinPrice}</h2>
-    <h1>Eth Price</h1>
-    <h2>{ethPrice}</h2>
-    
-</div>
-</main>
 
 <style>
   main {
@@ -56,15 +46,34 @@ let ethPrice;
     width: 400px;
     padding: 10px 20px;
     color: white;
+    display: flex;
+    justify-content: space-between;
   }
-  h1{
-    font-family: 'Montserrat', sans-serif;
-    font-size:21.4px;
-
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 21.4px;
   }
   h2 {
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-
+    font-family: "Montserrat", sans-serif;
+  }
+  img{
+    height:100px;
+    max-height:auto;
+    align-self: center;
   }
 </style>
+
+<main>
+  <div class="crypto_main">
+    <div class="crypto_main_prices">
+      <h1>Bitoin Price</h1>
+      <h2>{bitcoinPrice}</h2>
+      <h1>Eth Price</h1>
+      <h2>{ethPrice}</h2>
+    </div>
+    <img src="./images/bitcoingif.gif" alt="" />
+
+  </div>
+</main>
+ 

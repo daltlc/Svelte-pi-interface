@@ -4,3 +4,4 @@ public/bundle.*
 .env
 apikeys.js
 users.js
+src/data
