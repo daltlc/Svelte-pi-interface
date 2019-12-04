@@ -62,12 +62,12 @@
     <div class="second">
       <Weather />
       <Next />
-      <Next />
+      <!-- <Next /> -->
     </div>
     <div class="third">
       <Entertainment />
-      <Next />
-      <Next />
+      <!-- <Next /> -->
+      <!-- <Next /> -->
     </div>
   <!-- <ul>
     {#each apps as { name, image,link }, i}
