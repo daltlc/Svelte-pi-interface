@@ -3,6 +3,7 @@
   import Dashboard from "./Dashboard.svelte";
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
+  import Users from "./data/users.js"
 
   let pin;
   let user = { loggedIn: false };
@@ -11,22 +12,8 @@
   let invalid = false;
   $: view = pin ? pin.replace(/\d(?!$)/g, "*") : "Enter your pin";
 
-  let users = [
-    {
-      username: "Dalton",
-      pin: "5555",
-      icon: "",
-      color: "#191E4E"
-    },
-    {
-      username: "Carissa",
-      pin: "0143",
-      icon: "",
-      color: "blue"
-    }
-  ];
-
   onMount(() => {
+    console.log(Users)
     let savedUser = localStorage.getItem("user");
     let savedTheme = localStorage.getItem("theme");
     let savedPin = localStorage.getItem("pin");
@@ -38,14 +25,14 @@
   });
 
   const pinSubmit = () => {
-    for (let i = 0; i < users.length; i++) {
-      if (users[i].pin === pin) {
+    for (let i = 0; i < Users.length; i++) {
+      if (Users[i].pin === pin) {
         user.loggedIn = true;
-        currentUser = users[i].username;
-        currentTheme = users[i].color;
-        localStorage.setItem("user", users[i].username);
-        localStorage.setItem("theme", users[i].color);
-        localStorage.setItem("pin", users[i].pin);
+        currentUser = Users[i].username;
+        currentTheme = Users[i].color;
+        localStorage.setItem("user", Users[i].username);
+        localStorage.setItem("theme", Users[i].color);
+        localStorage.setItem("pin", Users[i].pin);
       } else {
       }
     }

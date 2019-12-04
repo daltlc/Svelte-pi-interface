@@ -1,9 +1,9 @@
-export let accounts = [
+export default [
     {
         username: 'Dalton',
         pin: '5555',
         icon: '',
-        color:'red'
+        color:'#191E4E'
     },
     {
         username: 'Carissa',

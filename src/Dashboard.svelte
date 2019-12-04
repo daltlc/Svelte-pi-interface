@@ -58,7 +58,6 @@
 </style>
 {#if show}
 <div transition:fade class="dashboard__main">
-  {#if user === 'Dalton'}
     <News />
     <div class="second">
       <Weather />
@@ -70,8 +69,6 @@
       <Next />
       <Next />
     </div>
-  {/if}
-  {#if user === 'Carissa'}{/if}
   <!-- <ul>
     {#each apps as { name, image,link }, i}
       <li> <a href="{link}">{name}</a></li>
