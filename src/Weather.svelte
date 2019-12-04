@@ -9,7 +9,7 @@
 
   onMount(async () => {
     let apiCall = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?id=5809844&APPID=e319fafbf44d2f659a1fb2c13277c106`
+      `https://api.openweathermap.org/data/2.5/weather?id=5809844&APPID=` + `${WEATHER_API_KEY}`
     ).then(r => r.json());
     console.log(apiCall);
     name = apiCall.name;
